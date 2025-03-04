@@ -40,11 +40,6 @@ while (totalEmpHours < MAX_WORKING_HOURS && totalWorkingDays < MAX_WORKING_DAYS)
     let empHours = getWorkHours(empCheck);
     let dailyWage = empHours * WAGE_PER_HOUR;
 
- // Ensure totalEmpHours doesn't exceed MAX_WORKING_HOURS
- if (totalEmpHours + empHours > MAX_WORKING_HOURS) {
-    empHours = MAX_WORKING_HOURS - totalEmpHours;
-}
-
     // Storing data in an object
     employeeDailyRecords.push({
         day: totalWorkingDays,
