@@ -30,5 +30,20 @@ function calculateTotalWage(dailyWages) {
     console.log("Total Days Worked:", totalWorkedDays);
 }
 
-// Exporting function
-module.exports = { calculateTotalWage };
+
+// Function for processing day-wise wage
+function processDayWiseWage(dailyWageMap) {
+
+    // Displaying Day-wise Wage
+    console.log("Day-wise Wages:");
+    dailyWageMap.forEach((wage, day) => {
+        console.log(`Day ${day}: Wage $${wage}`);
+    });
+
+    // Calculating Total Wage
+    let totalWageFromMap = Array.from(dailyWageMap.values()).reduce((total, wage) => total + wage, 0);
+    console.log(`Total Monthly Wage (From Map): $${totalWageFromMap}`);
+}
+
+// Exporting functions
+module.exports = { calculateTotalWage, processDayWiseWage };
